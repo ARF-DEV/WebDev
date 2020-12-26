@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+    <ul>
+    {% for item_id,item_name,item_price in items %}
+        <li>{{item_name}}, Rp. {{item_price}},00</li>
+        <form action="/setcart" method="post">
+            <input type="hidden" name="id" value="{{ item_id }}">
+            <input type="submit" value="Add to Cart">
+        </form>
+    {% endfor %}
+    </ul>
+{% endblock %}

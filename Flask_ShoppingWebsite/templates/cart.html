@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+    <h1>CART</h1>
+    <ul>
+    {% for item_id,item_name,item_price in cart_item %}
+        <li>{{item_name}}, Rp. {{item_price}},00</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
